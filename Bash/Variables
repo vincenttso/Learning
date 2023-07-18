@@ -1,0 +1,51 @@
+# Variables
+Variables are elements that can be assigned a value.
+When naming variables, they:
+    * are case-sensitive,
+    * can consist of a combination of letters,
+    * and can contain underscores.
+
+## Assigning Variables
+Use an `=` with no surrounding spaces when assigning a variable.
+The `lvalue` name is the value on the left, and the `rvalue` value is the assigned 
+value on the right.
+
+`my_first_variable="Hello World"`
+
+If there is a space on either side of the `=`, bash will interpret this as a call to a 
+command, with the following `rvalue` values as arguments to the command.
+
+Leaving a white space next to the assignment statement will set the value of the variable to
+`null`. A null value can also be created by declaring an uninitialised variable.
+
+`my_first_variable=`
+
+## Storing Command Results
+Encapsulating the `rvalue` in back-ticks ` ` or `$()` will result in the variable to store the
+contents of the command that is encapsulated.
+
+## Referencing Variables
+To reference a variable, denote it with `${}`, or `$` for short. They both equate to the same
+operation.
+
+## Double Quotes or Single Quotes
+Always use double quotes to initialise a string variables `rvalue`. Otherwise, bash will
+interpret the first value preceding a white space as a command, and the next following the 
+white space as an argument, and so on.
+
+Referencing a variable in single quotes will remove any exceeding white space contained in the
+variables `rvalue`.
+Referencing a variable in double quotes will preserve any exceeding white space contained in 
+the variables `rvalue`.
+
+## Types
+In bash, variables are un-typed. This means that when you declare a variable, 
+bash interprets the variable as a string, regardless of the context or contents contained.
+However, bash permits arithmetic operations on variables depending on the specific 
+context and contents. If a variable contains only digits, arithmetic operations may
+be permitted.
+
+Performing arthmetic operations on a string will set the `rvalue` of that variable to `0`.
+This is also the case when you use an undeclared or null variable. Bash will set the integer 
+value of the variable to 0.
+
